@@ -8,6 +8,7 @@
     @section('styles')
     <link rel="stylesheet" href="style.css">
     @endsection
+    <script src="https://kit.fontawesome.com/cfa8b0b405.js" crossorigin="anonymous"></script>
     <style>
         
 body {
@@ -32,7 +33,7 @@ body {
   }
   
   button {
-    background-color: #fff;
+    background-color: orange;
     color: #006699;
     padding: 10px 20px;
     border-radius: 5px;
@@ -72,7 +73,6 @@ body {
   input[type="search"] {
     padding: 10px;
     border-radius: 5px;
-    border: none;
     font-size: 16px;
     width: 70%;
   }
@@ -107,27 +107,31 @@ body {
   }
   
   #BS {
-    background-color: #fff;
-    color: #006699;
+    background-color: #006699;
     padding: 10px 20px;
     border-radius: 5px;
     font-size: 16px;
     border: none;
     cursor: pointer;
     text-decoration: none;
+    transition: 0.2s;
   }
   
   #BS:hover {
-    background-color: #006699;
+    background-color: cyan;
     color: #fff;
   }
+    a {
+      text-decoration: none;
+      color: white;
+    }
   
     </style>
 </head>
 <body>
     <header>
         <h1 id="T1">Amigo Secreto 🎁</h1>
-        <button type="submit" id="Botaoc"><a href="cadastro.php">Cadastrar!</a></button>
+        <button type="submit" id="Botaoc"><a href="{{ url('/usuarios/create') }}">Cadastrar!</a></button>
     </header>
     <main>
         <div class="Pesquisa">
@@ -136,7 +140,28 @@ body {
         <input type="submit" for = "Pesquisa" value=" &#128270 " id="Lupa">
         </div>
         <div class="Lista">
-            <Fieldset id="Field1"></Fieldset>
+           <Fieldset id="Field1">
+           <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Editar</th>
+                        <th>Deletar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($list as $usuario): ?>
+                        <tr>
+                            <td><?php echo $usuario->nome; ?></td>
+                            <td><?php echo $usuario->email; ?></td>
+                            <td><i class="fas fa-pen"></i></td>
+                            <td><i class="fas fa-trash"></i></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+           </Fieldset>
         </div>
         <div class="Botaos">
         <button type="submit" id="BS"><a href="">Sortear!</a></button>

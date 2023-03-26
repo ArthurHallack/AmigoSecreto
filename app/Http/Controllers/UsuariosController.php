@@ -15,7 +15,8 @@ class UsuariosController extends Controller
     {   
         // dd('oi');
         $test = usuarios::all();
-        return view ('usuarios.index');
+        //return response ($test);
+        return view ('usuarios.index')->with('list',$test) ;
     }
 
     /**
@@ -23,7 +24,7 @@ class UsuariosController extends Controller
      */
     public function create()
     {
-       // 
+       return view ('usuarios.create');
     }
 
     /**
@@ -31,7 +32,11 @@ class UsuariosController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $test = usuarios::create([
+            'nome' => $request->input('nome'),
+            'email' => $request->input('email'),
+        ]);
+        return redirect()->route('usuarios');
     }
 
     /**
@@ -61,8 +66,8 @@ class UsuariosController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        
+        usuarios::findOrFail($id)->delete();        
     }
 }

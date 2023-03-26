@@ -17,4 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/usuarios', [UsuariosController::class, 'index']);
+Route::get('/usuarios', [UsuariosController::class, 'index']);                
+Route::get('/usuarios/create', [UsuariosController::class, 'create']);
+Route::post('/teste',[UsuariosController::class, 'store']);                
+Route::delete('/usuarios/{id}', [UsuariosController::class, 'destroy']);
