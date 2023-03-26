@@ -156,7 +156,13 @@ body {
                             <td><?php echo $usuario->nome; ?></td>
                             <td><?php echo $usuario->email; ?></td>
                             <td><i class="fas fa-pen"></i></td>
-                            <td><i class="fas fa-trash"></i></td>
+                            <td>
+                            <form action="{{ url('/usuarios/'.$usuario->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit"><i class="fas fa-trash"></i></button>
+                            </form>
+                            </td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
