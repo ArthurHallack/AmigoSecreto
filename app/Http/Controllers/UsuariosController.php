@@ -32,7 +32,7 @@ class UsuariosController extends Controller
      */
     public function store(Request $request)
     {
-        $test = usuarios::create([
+            usuarios::create([
             'nome' => $request->input('nome'),
             'email' => $request->input('email'),
         ]);
@@ -44,7 +44,9 @@ class UsuariosController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view ('usuarios.create');
+        
+        
     }
 
     /**
@@ -52,7 +54,8 @@ class UsuariosController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        
+
     }
 
     /**
@@ -60,7 +63,13 @@ class UsuariosController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $test = usuarios::findOrFail($id);
+
+        $test->nome = $request->input('nome');
+        $test->email = $request->input('email');
+
+        $test->save();
+
     }
 
     /**
@@ -69,5 +78,7 @@ class UsuariosController extends Controller
     public function destroy($id)
     {
         usuarios::findOrFail($id)->delete();        
+        // return redirect('/index')->with('msg', 'evento excluido com sucesso');
+        return redirect('/usuarios')->with('success', 'Usuário excluído com sucesso!');
     }
 }
