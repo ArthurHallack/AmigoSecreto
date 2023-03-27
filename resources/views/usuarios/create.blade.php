@@ -71,19 +71,22 @@ form {
         <div class="Titulo">
             <h1 id="T2">Cadastre os Participantes</h1>
         </div>
-        <form method="POST" action="/teste">
+        <form action="{{ isset($usuario) ? url('/usuarios/'.$usuario->id) : url('/teste') }}" method="POST">
             @csrf
+            @if(isset($usuario))
+            @method('PUT')
+            @endif
             <fieldset id="Field">
                 <label><b>Nome:</b></label>
-                <input type="text" name="nome" for="nome" required>
+                <input type="text" name="nome" for="nome" required value="{{ isset($usuario) ? $usuario->nome : '' }}">
                 <label><b>Email:</b></label>
-                <input type="email" for="email" name="email" required>
+                <input type="email" for="email" name="email" required value="{{ isset($usuario) ? $usuario->email : '' }}">
             </fieldset>
             <div>
-            <button type="submit" id="BotaoSS"><a href="">Salvar!</a></button>
+            <button type="submit" id="BotaoSS">{{ isset($usuario) ? 'Atualizar' : 'Cadastrar' }}</button>
             </div>
             {{csrf_field()}}
-            
+
         </form> 
         
     </main>

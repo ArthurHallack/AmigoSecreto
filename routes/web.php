@@ -19,5 +19,9 @@ Route::get('/', function () {
 });
 Route::get('/usuarios', [UsuariosController::class, 'index']);                
 Route::get('/usuarios/create', [UsuariosController::class, 'create']);
-Route::post('/teste',[UsuariosController::class, 'store']);                
+Route::post('/teste',[UsuariosController::class, 'store']);   
+Route::put('/usuarios/{id}', [UsuariosController::class, 'update']);          
 Route::delete('/usuarios/{id}', [UsuariosController::class, 'destroy']);
+Route::get('/usuarios/{id}/edit', [UsuariosController::class, 'edit'])->name('usuarios.edit');
+Route::get('/usuarios', [UsuariosController::class, 'index'])->name('usuarios');
+Route::get('/sorteio', [UsuariosController::class, 'sorteio'])->name('sorteio');

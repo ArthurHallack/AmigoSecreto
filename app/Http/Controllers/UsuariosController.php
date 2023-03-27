@@ -32,11 +32,11 @@ class UsuariosController extends Controller
      */
     public function store(Request $request)
     {
-            usuarios::create([
+            $usuario =usuarios::create([
             'nome' => $request->input('nome'),
             'email' => $request->input('email'),
         ]);
-        return redirect()->route('usuarios');
+        return redirect()->route('usuarios.edit', ['id' => $usuario->id]);
     }
 
     /**
@@ -54,7 +54,8 @@ class UsuariosController extends Controller
      */
     public function edit(string $id)
     {
-        
+        $usuario = usuarios::findOrFail($id);
+        return view('usuarios.create', ['usuario' => $usuario]);
 
     }
 
@@ -63,12 +64,11 @@ class UsuariosController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $test = usuarios::findOrFail($id);
-
-        $test->nome = $request->input('nome');
-        $test->email = $request->input('email');
-
-        $test->save();
+        $usuario = usuarios::findOrFail($id);
+        $usuario->nome = $request->input('nome');
+        $usuario->email = $request->input('email');
+        $usuario->save();
+        return redirect()->route('usuarios.edit', ['id' => $usuario->id]);
 
     }
 
@@ -81,4 +81,11 @@ class UsuariosController extends Controller
         // return redirect('/index')->with('msg', 'evento excluido com sucesso');
         return redirect('/usuarios')->with('success', 'Usuário excluído com sucesso!');
     }
+    public function sorteio()
+{
+
+    $usuarios = usuarios::table('usuarios')->inRandomOrder()->limit(2)->get();
+    return view('usuarios.sorteio', ['usuarios' => $usuarios]);
 }
+}
+

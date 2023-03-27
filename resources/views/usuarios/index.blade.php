@@ -155,7 +155,7 @@ body {
                         <tr>
                             <td><?php echo $usuario->nome; ?></td>
                             <td><?php echo $usuario->email; ?></td>
-                            <td><i class="fas fa-pen"></i></td>
+                            <td><a href="{{ url('/usuarios/'.$usuario->id.'/edit') }}"><i class="fas fa-pen"></i></a></td>
                             <td>
                             <form action="{{ url('/usuarios/'.$usuario->id) }}" method="POST">
                             @csrf
@@ -170,7 +170,9 @@ body {
            </Fieldset>
         </div>
         <div class="Botaos">
-        <button type="submit" id="BS"><a href="">Sortear!</a></button>
+        <a href="{{ route('sorteio') }}">
+        <button type="submit" id="BS">Sortear!</button>
+        </a>
         </div>
     </main>
     <div class="container">
