@@ -83,9 +83,22 @@ class UsuariosController extends Controller
     }
     public function sorteio()
 {
+    $usuarios = usuarios::all();
 
-    $usuarios = usuarios::table('usuarios')->inRandomOrder()->limit(2)->get();
-    return view('usuarios.sorteio', ['usuarios' => $usuarios]);
+    $pares = [];
+
+    $usuarios = $usuarios->shuffle();
+
+    for ($i = 0; $i < count($usuarios); $i++) {
+        if ($i == count($usuarios) - 1) {
+            // Se for o último usuário, forma um par com o primeiro
+            $pares[] = [$usuarios[$i], $usuarios[0]];
+        } else {
+            $pares[] = [$usuarios[$i], $usuarios[$i + 1]];
+        }
+    }
+
+    return view('usuarios.sorteio', ['pares' => $pares]);
 }
 }
 
