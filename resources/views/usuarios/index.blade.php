@@ -115,6 +115,7 @@ body {
     cursor: pointer;
     text-decoration: none;
     transition: 0.2s;
+    color: white;
   }
   
   #BS:hover {
@@ -124,6 +125,9 @@ body {
     a {
       text-decoration: none;
       color: white;
+    }
+    .fa-pen:before {
+    content: "\f304";
     }
   
     </style>
@@ -155,7 +159,7 @@ body {
                         <tr>
                             <td><?php echo $usuario->nome; ?></td>
                             <td><?php echo $usuario->email; ?></td>
-                            <td><a href="{{ url('/usuarios/'.$usuario->id.'/edit') }}"><i class="fas fa-pen"></i></a></td>
+                            <td><button><a href="{{ url('/usuarios/'.$usuario->id.'/edit') }}"><i class="fas fa-pen"></i></a></button></td>
                             <td>
                             <form action="{{ url('/usuarios/'.$usuario->id) }}" method="POST">
                             @csrf
