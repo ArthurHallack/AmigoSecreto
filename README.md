@@ -57,20 +57,3 @@ Consiste no desenvolvimento de um sistema capaz de realizar um sorteio de amigo 
     <li>Visual Estudio Code
     <li>XAMPP
 </ul>
-<h1>Como rodar a aplicação🎮 <h1>
-    <h2>
-        Para rodas está aplicação é bem simples!
-    </h2>
-    <p>
-        O front end depende que o back end esteja sendo executado para que funcione, então primeiramente no Laravel va na pasta .env e altere os dados do banco.
-    </p>
-    <p>
-        o sistema ultilizara as migrations, então não será necessário criar a tabela usuarios no banco de dados.
-    </p>
-    <p>
-        Basta abrir o terminal do VSCode e e executar os seguintes comandos:<br>
-        <br>
-        php artisan optimize e php artisan serve
-        <br>
-        dai basta pegar o código dado pelo terminal e executar no navegador com /usuarios na frente.
-    </p>
