@@ -11,7 +11,7 @@ Consiste no desenvolvimento de um sistema capaz de realizar um sorteio de amigo 
 ![2023-03-27 (1)](https://user-images.githubusercontent.com/121068621/228050522-1b5cdddd-4c4d-4eda-976a-54ac9d45f935.png)
 
 ### layout cadastro 
-
+![2023-03-27 (4)](https://user-images.githubusercontent.com/121068621/228055737-4ea27219-13ef-47c8-be97-cc9a82258425.png)
 ### layout sorteio
 ![2023-03-27 (2)](https://user-images.githubusercontent.com/121068621/228054542-11343600-43af-447a-b159-b857ac9a27c2.png)
 # Técnologias utilizadas
