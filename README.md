@@ -2,7 +2,9 @@
 
 # Sorteio Amigo Secreto 🎁
 
->Status: em desenvolvimento ⚠️
+>Status: em desenvolvimento ⚠️<br>
+>o projeto ainda passará por uma maior padronização em seu layout<br>
+>e tbm por uma correção de bugs na tela de cadastro, onde após clicar em "cadastrar", é necessário voltar a tela inicial ultilizando o botão "voltar" do navegador, pois o botão cadastrar está levando para a tela de atualização cadastral.
 # 📌  Sobre o projeto
 Este projeto se trata de um desafio simples com o intuito de testar os meus conhecimentos em logica de programação e desenvolvimento web.
 Consiste no desenvolvimento de um sistema capaz de realizar um sorteio de amigo secreto, ultilizando para cadastro apenas nome e email, além de permitir tbm a edição dos dados ja cadastrados.
