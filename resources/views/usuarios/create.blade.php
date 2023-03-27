@@ -46,19 +46,19 @@ form {
 
 #BotaoSS {
     margin-right: 20px;
-    background-color: rgb(49, 140, 243);
+    background-color: orange;
     border-radius: 10px;
     height: 30px;
     width: 80px;
     transition: 0.2s;
-    color: black;
+    color: white;
     display: block;
     margin-top: 2vh;
     font-family: 'PT Sans', sans-serif;
     cursor: pointer;
 }
 #BotaoSS:hover {
-    background-color: rgb(185, 216, 252);
+    background-color: cyan;
 }
     </Style>
     

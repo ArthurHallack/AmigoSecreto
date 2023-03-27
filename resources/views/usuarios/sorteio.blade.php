@@ -3,10 +3,20 @@
 <head>
     <title>Sorteio</title>
     <style>
+        header {
+        background-color: #006699;
+        color: #fff;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: Arial, sans-serif;
+  }
         body {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
 
         main {
@@ -46,9 +56,10 @@
 </head>
 <body>
     <header>
-        <h1 id="T1">Sorteio</h1>
+        <h1 id="T1">Amigo Secreto 🎁</h1>
     </header>
     <main>
+        <h1>Sorteio</h1>
         <div class="Pares">
             <h1 id="Pares">Pares de Amigos Secretos</h1>
             <table>
